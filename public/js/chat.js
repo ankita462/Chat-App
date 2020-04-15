@@ -80,7 +80,7 @@ $sendLocationButton.addEventListener('click',()=>{
     if(!navigator.geolocation) {
         return alert('Geolocation is not supported by your browser')
     }
-    $sendLocationButton.setAttribute('disabled','disabled')
+    $sendLocationButton.setAttribute('disabled','true')
     navigator.geolocation.getCurrentPosition((position)=>{
         socket.emit('sendLocation',{
             latitude:position.coords.latitude,
